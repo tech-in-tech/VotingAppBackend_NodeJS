@@ -1,45 +1,43 @@
 const mongoose = require('mongoose');
-
-// !define the person schema
+// Define the person schema
 const userSchema = new mongoose.Schema({
-  name:{
-    type:String,
-    require:true
+  name: {
+    type: String,
+    required: true
   },
-  age:{
-    type:Number,
-    require:true
+  age: {
+    type: Number,
+    required: true
   },
-  email:{
-    type:String,
+  email: {
+    type: String,
   },
-  
-  mobile:{
-    type:String
+  mobile: {
+    type: String
   },
-  address:{
-    type:String,
-    require:true
+  address: {
+    type: String,
+    required: true
   },
-  aadharCardNumber:{
-    type:Number,
-    require:true,
-    unique:true
+  aadharCardNumber: {
+    type: Number,
+    required: true,
+    unique: true
   },
-  Password:{
-    type:String,
-    require:true
+  password: {
+    type: String,
+    required: true
   },
-  role:{
-    type:String,
-    enum:['voter','admin'],
-    default:'voter'
+  role: {
+    type: String,
+    enum: ['voter', 'admin'],
+    default: 'voter'
   },
-  isVoted:{
-    type:Boolean,
-    default:false
+  isVoted: {
+    type: Boolean,
+    default: false
   }
-})
+});
 
-const User = mongoose.model('User',userSchema);
+const User = mongoose.model('User', userSchema);
 module.exports = User;
